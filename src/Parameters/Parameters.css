@@ -1,0 +1,15 @@
+.parameters__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.parameters__items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.parameters__subtitle {
+  max-width: 500px;
+}

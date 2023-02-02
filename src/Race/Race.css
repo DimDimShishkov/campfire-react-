@@ -1,0 +1,11 @@
+.race__select {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.race-item {
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 10px;
+}

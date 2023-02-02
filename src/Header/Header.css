@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
+.header__image-link {
+  width: 80px;
+  height: 80px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.header__image {
+  width: 80px;
+  height: 80px;
+}
