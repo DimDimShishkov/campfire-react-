@@ -1,11 +1,129 @@
+.race {
+  width: 100%;
+  max-width: 1200px;
+  padding: 80px 0 0;
+  margin: 0 auto;
+}
+
+.race__heading {
+  margin: 0 0 20px;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 34px;
+  text-align: left;
+}
+
+.race__description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: left;
+  margin: 0;
+}
+.race__description_additional {
+  margin: 10px 0;
+}
+
+.race__description_additional span {
+  color: yellow;
+}
+
 .race__select {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
 .race-item {
-  border: 1px solid red;
+  border: 1px solid rgb(245, 222, 179);
   border-radius: 5px;
   padding: 10px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.race-item__heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  cursor: pointer;
+}
+
+.race-item__heading:hover .race-item__title {
+  color: rgb(245, 222, 179);
+}
+
+.race-item__span {
+  background: url(../images/accordion.png);
+  transition: all 0.3s ease;
+  width: 30px;
+  height: 30px;
+}
+
+.race-item__span_active {
+  transform: rotate(180deg);
+}
+
+.race-item__title {
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.race-item__submit-button {
+  margin-left: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  background: #bd8cfe;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 252px;
+  height: 54px;
+}
+
+.race-item__submit-button:hover {
+  background: #d3beee;
+}
+
+.race-item__body {
+  margin: 10px 0 0;
+  height: 0;
+  overflow: hidden;
+  transition: height ease 0.3s;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+}
+
+.race-item__item {
+  border: 1px solid white;
+  padding: 5px;
+  font-weight: 400;
+  /* font-size: 18px; */
+  /* line-height: 22px; */
+  margin: 0;
+  text-align: left;
+}
+
+.race-item__item:nth-child(odd) {
+  font-weight: 600;
+  /* font-size: 20px; */
+}
+
+.race-item__abilities {
+  height: 100%;
+}
+
+.race-item__items {
+  display: grid;
+  grid-template-columns: 200px 1fr;
 }

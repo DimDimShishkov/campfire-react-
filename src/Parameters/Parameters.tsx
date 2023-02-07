@@ -1,6 +1,5 @@
 import React from "react";
 import "./Parameters.css";
-import { useForm, SubmitHandler } from "react-hook-form";
 import raseArr from "../mockData/campfire.json";
 import { IRaceArray, IParameters } from "../Types/Types";
 
@@ -9,7 +8,7 @@ import { IRaceArray, IParameters } from "../Types/Types";
  * этап выбора SPECIAL
  */
 
-interface IFormInput {
+interface IFormInput extends IParameters {
   raseArr: IRaceArray[];
   nameRU: string;
   nameEN: string;
@@ -19,42 +18,55 @@ interface IFormInput {
 }
 
 export function Parameters() {
-  const { register, handleSubmit } = useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
+  const handleSubmit = (data: any) => {
+    console.log(data);
+  };
 
   return (
     <section className="parameters">
-      <div className="parameters__header">
-        <h2 className="parameters__heading">Распределение параметров</h2>
-        <p className="parameters__description">
-          Теперь вы знаете класс и расу. Далее вам нужно распределить параметры,
-          чтобы узнать, в чём ваш персонаж хорош, а в чём нет. В этой игре мы не
-          определяем параметры случайно, вместо этого используется специальное
-          распределение.
-        </p>
-        <p className="parameters__description">
-          Чтобы распределить параметры, разместите цифры 15, 14, 13, 12, 10, 8
-          как вам будет удобно. Всего на покупку у вас 27 очков.
-        </p>
-      </div>
-      <form onSubmit={handleSubmit(onSubmit)} className="parameters__form">
-        {raseArr.parameters.map((item) => (
-          <div className="parameters__items" key={item.nameEN}>
-            <div className="parameters__item">
-              <h4 className="parameters__title">{item.nameRU}</h4>
-              <input
-                className="parameters__input"
-                type="number"
-                required
-                min={8}
-                max={15}
-                placeholder={item.nameRU}
-              />
+      <h2 className="parameters__heading">Распределение параметров</h2>
+      <p className="parameters__description">Теперь вы знаете класс и расу.</p>
+      <p className="parameters__description">
+        Далее вам нужно распределить параметры, чтобы узнать, в чём ваш персонаж
+        хорош, а в чём нет.
+      </p>
+      <p className="parameters__description">
+        Чтобы распределить параметры, можно перетащить значения 15, 14, 13, 12,
+        10, 8 в ячейки или расставить вручную.
+      </p>
+      <p className="parameters__description">
+        Главное требование, чтобы сумма всех очков не превышала 27 очков.
+      </p>
+      <form className="parameters__form">
+        <div className="parameters__items">
+          {raseArr.parameters.map((item) => (
+            <div className="parameters__item" key={item.nameEN}>
+              <div className="parameters__status">
+                <h4 className="parameters__title">{item.nameRU}</h4>
+              </div>
+              <p className="parameters__subtitle">{item.description}</p>
+              <div>
+                <div className="parameters__values">
+                  <p className="parameters__subtitle">Выставите значение</p>
+                </div>
+                <div>
+                  <button>-</button>
+                  <input
+                    className="parameters__input"
+                    type="number"
+                    required
+                    min={8}
+                    max={15}
+                    // initialValue={8}
+                    placeholder={"Введите данные"}
+                  />
+                  <button>-</button>
+                </div>
+              </div>
             </div>
-
-            <p className="parameters__subtitle">{item.description}</p>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div></div>
         <button type="submit" className="parameters__submit">
           Подтвердить
         </button>
