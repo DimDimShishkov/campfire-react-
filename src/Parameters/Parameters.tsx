@@ -1,12 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Parameters.css";
 import raseArr from "../mockData/campfire.json";
 import { IRaceArray, IParameters } from "../Types/Types";
-
-/**
- *
- * этап выбора SPECIAL
- */
 
 interface IFormInput extends IParameters {
   raseArr: IRaceArray[];
@@ -16,11 +11,56 @@ interface IFormInput extends IParameters {
   initialValue: number;
   value: number;
 }
+/**
+ *
+ * этап выбора SPECIAL
+ */
 
 export function Parameters() {
-  const handleSubmit = (data: any) => {
-    console.log(data);
+  const [parameters, setParameters] = useState<
+    { name: string; value: number }[]
+  >([]);
+
+  useEffect(() => {
+    let initialArr: { name: string; value: number }[] = [];
+    raseArr.parameters.forEach((item) => {
+      let { nameEN, initialValue } = item;
+      let arr = { name: nameEN, value: initialValue };
+      initialArr.push(arr);
+    });
+    setParameters(initialArr);
+  }, []);
+
+  const openItemHandler = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    const { value } = event.target as HTMLButtonElement;
+    let item = value.split("-");
+    let found = parameters.find((el) => el.name === item[0]);
+    console.log(found);
+    if (found && item[1] === "decrease") {
+      console.log(123);
+      found.value += 1;
+      let biba = parameters.map((el) =>
+        el.name === item[0] ? { ...el, (() => (el.value = 1)) } : el
+      );
+      setParameters([...parameters, found]);
+    } else if (item[1] === "increase") {
+      /* setParameters((prevState) =>
+        prevState.map((el) =>
+          el.name === item[0] ? { ...el, value = value + 1 } : el
+        )
+      ); */
+      console.log(321);
+    }
+    console.log(parameters);
+    // setParameters(result);
   };
+
+  useEffect(() => {
+    console.log(parameters);
+  }, [parameters]);
 
   return (
     <section className="parameters">
@@ -45,28 +85,32 @@ export function Parameters() {
                 <h4 className="parameters__title">{item.nameRU}</h4>
               </div>
               <p className="parameters__subtitle">{item.description}</p>
-              <div>
-                <div className="parameters__values">
+              <div className="parameters__values">
+                <div>
                   <p className="parameters__subtitle">Выставите значение</p>
                 </div>
-                <div>
-                  <button>-</button>
-                  <input
-                    className="parameters__input"
-                    type="number"
-                    required
-                    min={8}
-                    max={15}
-                    // initialValue={8}
-                    placeholder={"Введите данные"}
-                  />
-                  <button>-</button>
+                <div className="parameters__value">
+                  <button
+                    className="parameters__button"
+                    onClick={openItemHandler}
+                    value={`${item.nameEN}-decrease`}
+                  >
+                    -
+                  </button>
+                  <p className="parameters__input">{item.initialValue}</p>
+                  <button
+                    className="parameters__button"
+                    onClick={openItemHandler}
+                    value={`${item.nameEN}-increase`}
+                  >
+                    +
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div></div>
+        <div className="parameters__items"></div>
         <button type="submit" className="parameters__submit">
           Подтвердить
         </button>

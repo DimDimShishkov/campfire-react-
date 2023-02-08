@@ -56,3 +56,44 @@
   margin: 0;
   text-align: left;
 }
+.parameters__values {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.parameters__value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.parameters__button {
+  background-color: black;
+  color: wheat;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.parameters__input {
+  background-color: black;
+  color: wheat;
+  border: none;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
