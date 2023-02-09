@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Parameters.css";
 import raseArr from "../mockData/campfire.json";
-// import { IRaceArray, IParameters } from "../Types/Types";
+import { IParameter } from "../Types/Types";
 
 /* interface IFormInput extends IParameters {
   raseArr: IRaceArray[];
@@ -12,17 +12,15 @@ import raseArr from "../mockData/campfire.json";
   value: number;
 } */
 
-interface IParameter {
-  name: string;
-  value: number;
-  error: string;
+interface IParametersProps {
+  setParameters(v: IParameter[]): void;
 }
 /**
  *
  * этап выбора SPECIAL
  */
 
-export function Parameters() {
+export const Parameters: React.FC<IParametersProps> = (props) => {
   const [special, setSpecial] = useState<IParameter[]>([]);
   const [summaryParam, setSummaryParam] = useState<number>(0);
 
@@ -74,7 +72,7 @@ export function Parameters() {
     event: React.MouseEvent<HTMLFormElement, MouseEvent>
   ) => {
     event.preventDefault();
-    console.log(special);
+    props.setParameters(special);
   };
 
   useEffect(() => {
@@ -84,7 +82,7 @@ export function Parameters() {
   return (
     <section className="parameters">
       <h2 className="parameters__heading">Распределение параметров</h2>
-      <p className="parameters__description">Теперь вы знаете класс и расу.</p>
+      <p className="parameters__description">Теперь вы знаете расу.</p>
       <p className="parameters__description">
         Далее вам нужно распределить параметры, чтобы узнать, в чём ваш персонаж
         хорош, а в чём нет.
@@ -130,9 +128,9 @@ export function Parameters() {
                     +
                   </button>
                 </div>
-                <p className="parameters__error">
+                {/* <p className="parameters__error">
                   {special.find((el) => el.name === item.nameEN)?.error}
-                </p>
+                </p> */}
               </div>
             </div>
           ))}
@@ -146,4 +144,4 @@ export function Parameters() {
       </form>
     </section>
   );
-}
+};

@@ -38,8 +38,8 @@ export function RaceItem({ race, setRace, active, onToggle }: IRaceItem) {
         className="race-item__body"
         style={
           active
-            ? { height: contentEl.current?.scrollHeight }
-            : { height: "0px" }
+            ? { height: contentEl.current?.scrollHeight, marginTop: "10px" }
+            : { height: "0px", marginTop: "0" }
         }
         ref={contentEl}
       >

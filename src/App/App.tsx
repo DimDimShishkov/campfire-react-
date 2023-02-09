@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import Character from "../Character/Character";
+import { Class } from "../Class/Class";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { Parameters } from "../Parameters/Parameters";
 import { Race } from "../Race/Race";
 import "./App.css";
+import { IParameter } from "../Types/Types";
 
 function App() {
   const [race, setRace] = useState<string>("Подлежит выбору");
+  const [parameters, setParameters] = useState<IParameter[]>([]);
+  const [characterClass, setCharacterClass] =
+    useState<string>("Подлежит выбору");
 
   return (
     <div className="App">
@@ -23,8 +28,9 @@ function App() {
       </section>
 
       <Race setRace={setRace} />
-      <Parameters />
-      {/* <Character race={race} /> */}
+      <Parameters setParameters={setParameters} />
+      <Class setCharacterClass={setCharacterClass} />
+      <Character race={race} parameters={parameters} />
       <Footer />
     </div>
   );

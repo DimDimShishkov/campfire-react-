@@ -20,10 +20,17 @@ export interface IParameters {
   value: number;
 }
 
+export interface IParameter {
+  name: string;
+  value: number;
+  error?: string;
+}
+
 export interface IClass {
   name: string;
   value: string;
   description: string;
+  advice: string;
 }
 
 export interface ISubclass {
