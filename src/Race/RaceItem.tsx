@@ -47,8 +47,6 @@ export function RaceItem({ race, setRace, active, onToggle }: IRaceItem) {
         <p className="race-item__item">{race.description}</p>
         <p className="race-item__item">Язык</p>
         <p className="race-item__item">{race.namesExample}</p>
-        <p className="race-item__item">Бонус</p>
-        <p className="race-item__item">{race.bonus}</p>
         <p className="race-item__item">Совет</p>
         <p className="race-item__item">{race.advice}</p>
         <p className="race-item__item">Способности</p>

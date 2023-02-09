@@ -1,15 +1,21 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Parameters.css";
 import raseArr from "../mockData/campfire.json";
-import { IRaceArray, IParameters } from "../Types/Types";
+// import { IRaceArray, IParameters } from "../Types/Types";
 
-interface IFormInput extends IParameters {
+/* interface IFormInput extends IParameters {
   raseArr: IRaceArray[];
   nameRU: string;
   nameEN: string;
   description: string;
   initialValue: number;
   value: number;
+} */
+
+interface IParameter {
+  name: string;
+  value: number;
+  error: string;
 }
 /**
  *
@@ -17,50 +23,63 @@ interface IFormInput extends IParameters {
  */
 
 export function Parameters() {
-  const [parameters, setParameters] = useState<
-    { name: string; value: number }[]
-  >([]);
+  const [special, setSpecial] = useState<IParameter[]>([]);
+  const [summaryParam, setSummaryParam] = useState<number>(0);
 
   useEffect(() => {
-    let initialArr: { name: string; value: number }[] = [];
+    let initialArr: IParameter[] = [];
+    let initialSum: number = 0;
     raseArr.parameters.forEach((item) => {
       let { nameEN, initialValue } = item;
-      let arr = { name: nameEN, value: initialValue };
+      let arr = { name: nameEN, value: initialValue, error: "" };
       initialArr.push(arr);
+      initialSum = initialSum + initialValue;
     });
-    setParameters(initialArr);
+    setSpecial(initialArr);
+    setSummaryParam(initialSum);
   }, []);
 
-  const openItemHandler = (
+  const handleChangeSpecial = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.preventDefault();
     const { value } = event.target as HTMLButtonElement;
     let item = value.split("-");
-    let found = parameters.find((el) => el.name === item[0]);
-    console.log(found);
-    if (found && item[1] === "decrease") {
-      console.log(123);
-      found.value += 1;
-      let biba = parameters.map((el) =>
-        el.name === item[0] ? { ...el, (() => (el.value = 1)) } : el
+    if (item[1] === "decrease" && summaryParam > 48) {
+      return setSpecial(
+        special.map((el) => {
+          if (el.value > 8 && el.name === item[0]) {
+            setSummaryParam(summaryParam - 1);
+            return { ...el, value: (el.value -= 1) };
+          } /* else if (el.value === 8 && el.name === item[0]) {
+              return { ...el, error: "Значение не меньше 8" };
+            } */
+          return el;
+        })
       );
-      setParameters([...parameters, found]);
-    } else if (item[1] === "increase") {
-      /* setParameters((prevState) =>
-        prevState.map((el) =>
-          el.name === item[0] ? { ...el, value = value + 1 } : el
-        )
-      ); */
-      console.log(321);
+    } else if (item[1] === "increase" && summaryParam < 75) {
+      return setSpecial(
+        special.map((el) => {
+          if (el.value < 16 && el.name === item[0]) {
+            setSummaryParam(summaryParam + 1);
+            return { ...el, value: (el.value += 1) };
+          }
+          return el;
+        })
+      );
     }
-    console.log(parameters);
-    // setParameters(result);
+  };
+
+  const handleSubmitForm = (
+    event: React.MouseEvent<HTMLFormElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    console.log(special);
   };
 
   useEffect(() => {
-    console.log(parameters);
-  }, [parameters]);
+    console.log(summaryParam);
+  }, [summaryParam]);
 
   return (
     <section className="parameters">
@@ -71,13 +90,16 @@ export function Parameters() {
         хорош, а в чём нет.
       </p>
       <p className="parameters__description">
-        Чтобы распределить параметры, можно перетащить значения 15, 14, 13, 12,
-        10, 8 в ячейки или расставить вручную.
+        Чтобы распределить параметры, можно перетащить значения 16, 15, 14, 13,
+        12, 10, 8 в ячейки или расставить вручную.
       </p>
       <p className="parameters__description">
-        Главное требование, чтобы сумма всех очков не превышала 27 очков.
+        Главное требование, чтобы сумма всех очков не превышала 75 очков.
       </p>
-      <form className="parameters__form">
+      <p className="parameters__description">
+        Рекомендуется значение параметра не меньше 8 и не больше 16.
+      </p>
+      <form className="parameters__form" onSubmit={handleSubmitForm}>
         <div className="parameters__items">
           {raseArr.parameters.map((item) => (
             <div className="parameters__item" key={item.nameEN}>
@@ -92,28 +114,35 @@ export function Parameters() {
                 <div className="parameters__value">
                   <button
                     className="parameters__button"
-                    onClick={openItemHandler}
+                    onClick={handleChangeSpecial}
                     value={`${item.nameEN}-decrease`}
                   >
                     -
                   </button>
-                  <p className="parameters__input">{item.initialValue}</p>
+                  <p className="parameters__result">
+                    {special.find((el) => el.name === item.nameEN)?.value}
+                  </p>
                   <button
                     className="parameters__button"
-                    onClick={openItemHandler}
+                    onClick={handleChangeSpecial}
                     value={`${item.nameEN}-increase`}
                   >
                     +
                   </button>
                 </div>
+                <p className="parameters__error">
+                  {special.find((el) => el.name === item.nameEN)?.error}
+                </p>
               </div>
             </div>
           ))}
         </div>
-        <div className="parameters__items"></div>
-        <button type="submit" className="parameters__submit">
-          Подтвердить
-        </button>
+        <div className="parameters__items">
+          <p>Осталось очков: {75 - summaryParam}</p>
+          <button type="submit" className="parameters__submit">
+            Подтвердить
+          </button>
+        </div>
       </form>
     </section>
   );

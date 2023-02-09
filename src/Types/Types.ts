@@ -3,7 +3,6 @@ export interface IRace {
   value: string;
   description: string;
   namesExample: string;
-  bonus: string;
   advice: string;
   abilities: IRaceAbilities[];
 }
