@@ -33,16 +33,27 @@ export interface IClass {
   advice: string;
 }
 
-export interface ISubclass {
-  name: string;
-  value: number;
-  description: string;
-  level: number;
-}
 export interface IAbilities {
   name: string;
+  values: IAbilitiesValue[];
+}
+export interface IValue {
+  name: string;
   value: number;
+  level: number;
   description: string;
+}
+export interface IAbilitiesValue extends IValue {
+  damage: string;
+}
+
+export interface ISubclassValue extends IValue {
+  abilities: IValue[];
+}
+
+export interface ISubclass {
+  name: string;
+  values: ISubclassValue[];
 }
 
 export interface IRaceArray {

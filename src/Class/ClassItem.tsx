@@ -27,6 +27,11 @@ export function ClassItem({
     setCharacterClass(characterClass.value);
   };
 
+  console.log(
+    raseArr.abilities.find((item) => item.name === characterClass.value)?.name
+  );
+
+  console.log(characterClass);
   return (
     <div className="class__item">
       <div className="class-item__heading" onClick={onToggle}>
@@ -50,18 +55,25 @@ export function ClassItem({
         ref={contentEl}
       >
         <p className="class-item__text">Описание</p>
-        <p className="race-item__item">{characterClass.description}</p>
-        <p className="race-item__item">Совет</p>
-        <p className="race-item__item">{characterClass.advice}</p>
-        {/* <p className="race-item__item">Способности</p> */}
-        {/* <div className="race-item__abilities">
-          {race.abilities.map((item: IRaceAbilities) => (
-            <div className="race-item__items" key={item.name}>
-              <p className="race-item__item">{item.name}</p>
-              <p className="race-item__item">{item.description}</p>
-            </div>
-          ))}
-        </div> */}
+        <p className="class-item__text">{characterClass.description}</p>
+        <p className="class-item__text">Совет</p>
+        <p className="class-item__text">{characterClass.advice}</p>
+        <p className="class-item__text">Способности</p>
+        <div className="race-item__abilities">
+          {raseArr.abilities
+            .find((item) => item.name === characterClass.value)
+            ?.values.map((item) => (
+              <div className="race-item__items" key={item.name}>
+                <div>
+                  <p className="race-item__item">{item.name}</p>
+                  {/* <p className="race-item__item">
+                    Доступно с {item.level} уровня
+                  </p> */}
+                </div>
+                <p className="race-item__item">{item.description}</p>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
