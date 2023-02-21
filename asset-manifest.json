@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/campfire/static/css/main.0affc0d3.css",
+    "main.js": "/campfire/static/js/main.b838d1f1.js",
+    "static/media/campfire.png": "/campfire/static/media/campfire.d17c778b693e79daf15c.png",
+    "index.html": "/campfire/index.html",
+    "main.0affc0d3.css.map": "/campfire/static/css/main.0affc0d3.css.map",
+    "main.b838d1f1.js.map": "/campfire/static/js/main.b838d1f1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0affc0d3.css",
+    "static/js/main.b838d1f1.js"
+  ]
+}
