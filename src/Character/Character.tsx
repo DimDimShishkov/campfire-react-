@@ -15,6 +15,7 @@ interface IProps {
 function Character(props: IProps) {
   return (
     <section className="character">
+      <p>итоговый лист персонажа</p>
       <p>{props.race}</p>
       <div>
         {props.parameters.map((param) => (

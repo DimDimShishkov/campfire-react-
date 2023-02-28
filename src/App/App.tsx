@@ -8,6 +8,7 @@ import { Race } from "../Race/Race";
 import "./App.css";
 import { IParameter } from "../Types/Types";
 import Abilities from "../Abilities/Abilities";
+import { Staff } from "../Staff/Staff";
 
 function App() {
   const [race, setRace] = useState<string>("Подлежит выбору");
@@ -78,6 +79,7 @@ function App() {
       <Class setCharacterClass={setCharacterClass} />
       <Character race={race} parameters={parameters} />
       <Abilities />
+      <Staff />
       <Footer />
     </div>
   );
