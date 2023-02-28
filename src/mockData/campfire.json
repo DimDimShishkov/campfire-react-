@@ -69,43 +69,43 @@
       "nameRU": "Сила",
       "nameEN": "Power",
       "description": "Определяет мышечную мощь, способность поднимать тяжести и сражаться в ближнем бою",
-      "initialValue": 8,
-      "value": 8
+      "initialValue": 10,
+      "value": 10
     },
     {
       "nameRU": "Ловкость",
       "nameEN": "Agility",
       "description": "Определяет умение управлять телом, гибкость, чувство баланса и помогает стрелять из дальнобойных оружий, таких как луки или арбалеты",
-      "initialValue": 8,
-      "value": 8
+      "initialValue": 10,
+      "value": 10
     },
     {
       "nameRU": "Выносливость",
       "nameEN": "Constitution",
       "description": "Определяет устойчивость организма к внешним воздействиям, устойчивость к болезням и количество очков здоровья",
-      "initialValue": 8,
-      "value": 8
+      "initialValue": 10,
+      "value": 10
     },
     {
       "nameRU": "Интеллект",
       "nameEN": "Intelligence",
       "description": "Определяет способность запоминать, вспоминать, сопоставлять и работу с имеющейся информацией. Почти всегда про теоретическое знание",
-      "initialValue": 8,
-      "value": 8
+      "initialValue": 10,
+      "value": 10
     },
     {
       "nameRU": "Мудрость",
       "nameEN": "Wisdom",
       "description": "Определяет, как хорошо распознаёте сигналы из внешнего мира. Обычно про практическое знание",
-      "initialValue": 8,
-      "value": 8
+      "initialValue": 10,
+      "value": 10
     },
     {
       "nameRU": "Харизма",
       "nameEN": "Charity",
       "description": "Определяет, насколько ваш персонаж уверен в себе и насколько он может влиять на других путём общения",
-      "initialValue": 8,
-      "value": 8
+      "initialValue": 10,
+      "value": 10
     }
   ],
   "classes": [

@@ -27,11 +27,11 @@ export function ClassItem({
     setCharacterClass(characterClass.value);
   };
 
-  console.log(
+  /*   console.log(
     raseArr.abilities.find((item) => item.name === characterClass.value)?.name
-  );
+  ); */
 
-  console.log(characterClass);
+  // console.log(characterClass);
   return (
     <div className="class__item">
       <div className="class-item__heading" onClick={onToggle}>
@@ -66,9 +66,9 @@ export function ClassItem({
               <div className="race-item__items" key={item.name}>
                 <div>
                   <p className="race-item__item">{item.name}</p>
-                  {/* <p className="race-item__item">
+                  <p className="race-item__item">
                     Доступно с {item.level} уровня
-                  </p> */}
+                  </p>
                 </div>
                 <p className="race-item__item">{item.description}</p>
               </div>

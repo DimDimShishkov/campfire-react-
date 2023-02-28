@@ -46,6 +46,10 @@ export const Parameters: React.FC<IParametersProps> = (props) => {
     if (item[1] === "decrease" && summaryParam > 48) {
       return setSpecial(
         special.map((el) => {
+          if (el.value > 13 && el.name === item[0]) {
+            setSummaryParam(summaryParam - 2);
+            return { ...el, value: (el.value -= 1) };
+          }
           if (el.value > 8 && el.name === item[0]) {
             setSummaryParam(summaryParam - 1);
             return { ...el, value: (el.value -= 1) };
@@ -58,13 +62,38 @@ export const Parameters: React.FC<IParametersProps> = (props) => {
     } else if (item[1] === "increase" && summaryParam < 75) {
       return setSpecial(
         special.map((el) => {
-          if (el.value < 16 && el.name === item[0]) {
+          if (el.value >= 13 && el.value < 15 && el.name === item[0]) {
+            setSummaryParam(summaryParam + 2);
+            return { ...el, value: (el.value += 1) };
+          } else if (el.value < 15 && el.name === item[0]) {
             setSummaryParam(summaryParam + 1);
             return { ...el, value: (el.value += 1) };
           }
           return el;
         })
       );
+    }
+  };
+
+  // распределение параметров в тестовом режиме
+  const handleCheckParam = (value: number | undefined) => {
+    switch (value) {
+      case undefined:
+        return "0";
+      case 8:
+        return "-1";
+      case 9:
+        return "-1";
+      case 12:
+        return "+1";
+      case 13:
+        return "+1";
+      case 14:
+        return "+2";
+      case 15:
+        return "+2";
+      default:
+        return "0";
     }
   };
 
@@ -88,14 +117,14 @@ export const Parameters: React.FC<IParametersProps> = (props) => {
         хорош, а в чём нет.
       </p>
       <p className="parameters__description">
-        Чтобы распределить параметры, можно перетащить значения 16, 15, 14, 13,
-        12, 10, 8 в ячейки или расставить вручную.
+        Чтобы распределить параметры, можно перетащить значения 15, 14, 13, 12,
+        10, 8 в ячейки или расставить вручную.
       </p>
       <p className="parameters__description">
         Главное требование, чтобы сумма всех очков не превышала 75 очков.
       </p>
       <p className="parameters__description">
-        Рекомендуется значение параметра не меньше 8 и не больше 16.
+        Рекомендуется значение параметра не меньше 8 и не больше 15.
       </p>
       <form className="parameters__form" onSubmit={handleSubmitForm}>
         <div className="parameters__items">
@@ -103,6 +132,11 @@ export const Parameters: React.FC<IParametersProps> = (props) => {
             <div className="parameters__item" key={item.nameEN}>
               <div className="parameters__status">
                 <h4 className="parameters__title">{item.nameRU}</h4>
+                <p className="parameters__title">
+                  {handleCheckParam(
+                    special.find((el) => el.name === item.nameEN)?.value
+                  )}
+                </p>
               </div>
               <p className="parameters__subtitle">{item.description}</p>
               <div className="parameters__values">
