@@ -57,7 +57,7 @@ function Abilities() {
             </div>
           </div>
           <div className="abilities__item">
-            <div className="abilities__text-item">
+            <div className="abilities__check-item">
               <label className="abilities__label">
                 <input
                   className="abilities__input"

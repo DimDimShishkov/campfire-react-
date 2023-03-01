@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Class.css";
 import raseArr from "../mockData/campfire.json";
 import { ClassItem } from "./ClassItem";
+import { ClassBarbarian } from "./ClassItems/ClassBarbarian";
+import { ClassRogue } from "./ClassItems/ClassRogue";
 
 interface IRaceProps {
   setCharacterClass(v: string): void;
@@ -37,6 +39,16 @@ export const Class: React.FC<IRaceProps> = (props) => {
         Жрец, Следопыт и Варвар.
       </p>
       <div className="class__items">
+        <ClassBarbarian
+          setCharacterClass={props.setCharacterClass}
+          active={clicked === 0}
+          onToggle={() => handleToggle(0)}
+        />
+        <ClassRogue
+          setCharacterClass={props.setCharacterClass}
+          active={clicked === 1}
+          onToggle={() => handleToggle(1)}
+        />
         {raseArr.classes.map((item, index) => (
           <ClassItem
             characterClass={item}

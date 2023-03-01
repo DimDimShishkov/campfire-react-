@@ -77,7 +77,7 @@ function App() {
       <Race setRace={setRace} />
       <Parameters setParameters={setParameters} />
       <Class setCharacterClass={setCharacterClass} />
-      <Character race={race} parameters={parameters} />
+      {/* <Character race={race} parameters={parameters} /> */}
       <Abilities />
       <Staff />
       <Footer />

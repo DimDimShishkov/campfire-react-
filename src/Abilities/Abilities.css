@@ -27,6 +27,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  gap: 20px;
   height: 777px;
   margin-right: 30px;
   padding: 0;
@@ -50,7 +51,7 @@
 }
 
 .abilities__line {
-  background: rgba(96, 107, 133, 0.5);
+  background: rgba(133, 110, 96, 0.5);
   height: 1px;
   margin: 0 10px;
   width: 100%;
@@ -73,12 +74,24 @@
 }
 
 .abilities__text-item {
-  background: #20222c;
-  border: 1px solid #606b85;
+  background: rgb(103, 0, 1);
+  border: 1px solid #ff6701;
   border-radius: 6px 0 0 6px;
-  padding: 4px 0;
+  padding: 4px 0 4px 10px;
   width: 100%;
   position: relative;
+  box-sizing: border-box;
+}
+
+.abilities__check-item {
+  background: rgb(103, 0, 1);
+  border-radius: 20px 0 0 20px;
+  display: flex;
+  align-items: center;
+  padding: 4px 0 4px 20px;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .abilities__subtitle {
