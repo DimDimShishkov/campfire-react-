@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/campfire/static/css/main.a91fc1f8.css",
-    "main.js": "/campfire/static/js/main.7006a92c.js",
+    "main.css": "/campfire/static/css/main.8eb2b32d.css",
+    "main.js": "/campfire/static/js/main.282c5840.js",
     "static/media/campfire.png": "/campfire/static/media/campfire.d17c778b693e79daf15c.png",
     "index.html": "/campfire/index.html",
-    "main.a91fc1f8.css.map": "/campfire/static/css/main.a91fc1f8.css.map",
-    "main.7006a92c.js.map": "/campfire/static/js/main.7006a92c.js.map"
+    "main.8eb2b32d.css.map": "/campfire/static/css/main.8eb2b32d.css.map",
+    "main.282c5840.js.map": "/campfire/static/js/main.282c5840.js.map"
   },
   "entrypoints": [
-    "static/css/main.a91fc1f8.css",
-    "static/js/main.7006a92c.js"
+    "static/css/main.8eb2b32d.css",
+    "static/js/main.282c5840.js"
   ]
 }
