@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Character from "../Character/Character";
 import { Class } from "../Class/Class";
 import { Footer } from "../Footer/Footer";
@@ -6,15 +6,21 @@ import { Header } from "../Header/Header";
 import { Parameters } from "../Parameters/Parameters";
 import { Race } from "../Race/Race";
 import "./App.css";
-import { IParameter } from "../Types/Types";
+import { IAbility, IParameter } from "../Types/Types";
 import Abilities from "../Abilities/Abilities";
 import { Staff } from "../Staff/Staff";
+import { ResultList } from "../ResultList/ResultList";
 
 function App() {
   const [race, setRace] = useState<string>("Подлежит выбору");
   const [parameters, setParameters] = useState<IParameter[]>([]);
   const [characterClass, setCharacterClass] =
     useState<string>("Подлежит выбору");
+  const [abilities, setAbilities] = useState<IAbility[]>([]);
+
+  useEffect(() => {
+    // console.log(abilities);
+  }, [abilities]);
 
   return (
     <div className="App">
@@ -78,8 +84,9 @@ function App() {
       <Parameters setParameters={setParameters} />
       <Class setCharacterClass={setCharacterClass} />
       {/* <Character race={race} parameters={parameters} /> */}
-      <Abilities />
+      <Abilities parameters={parameters} race={race} setResult={setAbilities} />
       <Staff />
+      <ResultList />
       <Footer />
     </div>
   );

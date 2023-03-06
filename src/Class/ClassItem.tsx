@@ -10,7 +10,7 @@ interface IClassItem {
 }
 /**
  *
- * ячейка выбора расы
+ * ячейка выбора класса
  */
 export function ClassItem({
   characterClass,
@@ -27,11 +27,6 @@ export function ClassItem({
     setCharacterClass(characterClass.value);
   };
 
-  /*   console.log(
-    raseArr.abilities.find((item) => item.name === characterClass.value)?.name
-  ); */
-
-  // console.log(characterClass);
   return (
     <div className="class__item">
       <div className="class-item__heading" onClick={onToggle}>

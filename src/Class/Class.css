@@ -11,6 +11,7 @@
   font-size: 25px;
   line-height: 34px;
   text-align: left;
+  color: #ff3c00;
 }
 .class__description {
   font-style: normal;
@@ -173,4 +174,8 @@
 }
 
 .class-item__abilities {
+}
+
+.race-item__item span {
+  display: block;
 }

@@ -4,6 +4,7 @@ import raseArr from "../mockData/campfire.json";
 import { ClassItem } from "./ClassItem";
 import { ClassBarbarian } from "./ClassItems/ClassBarbarian";
 import { ClassRogue } from "./ClassItems/ClassRogue";
+import { ClassCleric } from "./ClassItems/ClassCleric";
 
 interface IRaceProps {
   setCharacterClass(v: string): void;
@@ -24,8 +25,8 @@ export const Class: React.FC<IRaceProps> = (props) => {
   };
 
   return (
-    <section className="class">
-      <h2 className="class__heading">Выбор класса</h2>
+    <section className="section">
+      <h2 className="section__heading">Выбор класса</h2>
       <p className="class__description">Следующим этапом нужно выбрать класс</p>
       <p className="class__description">
         Сейчас доступны немногие классы и подклассы.
@@ -49,7 +50,12 @@ export const Class: React.FC<IRaceProps> = (props) => {
           active={clicked === 1}
           onToggle={() => handleToggle(1)}
         />
-        {raseArr.classes.map((item, index) => (
+        <ClassCleric
+          setCharacterClass={props.setCharacterClass}
+          active={clicked === 2}
+          onToggle={() => handleToggle(2)}
+        />
+        {/* {raseArr.classes.map((item, index) => (
           <ClassItem
             characterClass={item}
             setCharacterClass={props.setCharacterClass}
@@ -57,7 +63,7 @@ export const Class: React.FC<IRaceProps> = (props) => {
             active={clicked === index}
             onToggle={() => handleToggle(index)}
           />
-        ))}
+        ))} */}
       </div>
     </section>
   );

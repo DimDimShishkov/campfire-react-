@@ -22,8 +22,8 @@ export const Race: React.FC<IRaceProps> = (props) => {
   };
 
   return (
-    <section className="race">
-      <h2 className="race__heading">Выбор расы</h2>
+    <section className="section">
+      <h2 className="section__heading">Выбор расы</h2>
       <p className="race__description">
         Для начала выберите любую из имеющихся рас.
       </p>

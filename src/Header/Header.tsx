@@ -18,9 +18,7 @@ export function Header() {
   }, []);
 
   return (
-    <header
-      className={`header ${scrollPosition > 100 ? "header_overlay" : ""}`}
-    >
+    <header className={`header ${scrollPosition > 80 ? "header_overlay" : ""}`}>
       <a
         href="https://docs.google.com/document/d/1NwrwG1uq9bGVG2U2BvIbsbJhat0QAoMF/edit#heading=h.3dy6vkm"
         target="_blank"

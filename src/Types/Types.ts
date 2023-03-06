@@ -20,10 +20,17 @@ export interface IParameters {
   value: number;
 }
 
+export interface IAbility {
+  name: string;
+  checked: boolean;
+  value: string;
+}
+
 export interface IParameter {
   name: string;
   value: number;
   error?: string;
+  bonus: string;
 }
 
 export interface IClass {

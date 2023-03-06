@@ -29,7 +29,13 @@ export const Parameters: React.FC<IParametersProps> = (props) => {
     let initialSum: number = 0;
     raseArr.parameters.forEach((item) => {
       let { nameEN, initialValue } = item;
-      let arr = { name: nameEN, value: initialValue, error: "" };
+
+      let arr = {
+        name: nameEN,
+        value: initialValue,
+        error: "",
+        bonus: "0",
+      };
       initialArr.push(arr);
       initialSum = initialSum + initialValue;
     });
@@ -41,6 +47,8 @@ export const Parameters: React.FC<IParametersProps> = (props) => {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.preventDefault();
+    let bonusValue: string;
+    let resultValue: number;
     const { value } = event.target as HTMLButtonElement;
     let item = value.split("-");
     if (item[1] === "decrease" && summaryParam > 48) {
@@ -48,11 +56,15 @@ export const Parameters: React.FC<IParametersProps> = (props) => {
         special.map((el) => {
           if (el.value > 13 && el.name === item[0]) {
             setSummaryParam(summaryParam - 2);
-            return { ...el, value: (el.value -= 1) };
+            resultValue = el.value -= 1;
+            bonusValue = handleCheckParam(resultValue);
+            return { ...el, value: resultValue, bonus: bonusValue };
           }
           if (el.value > 8 && el.name === item[0]) {
             setSummaryParam(summaryParam - 1);
-            return { ...el, value: (el.value -= 1) };
+            resultValue = el.value -= 1;
+            bonusValue = handleCheckParam(resultValue);
+            return { ...el, value: resultValue, bonus: bonusValue };
           } /* else if (el.value === 8 && el.name === item[0]) {
               return { ...el, error: "Значение не меньше 8" };
             } */
@@ -64,10 +76,14 @@ export const Parameters: React.FC<IParametersProps> = (props) => {
         special.map((el) => {
           if (el.value >= 13 && el.value < 15 && el.name === item[0]) {
             setSummaryParam(summaryParam + 2);
-            return { ...el, value: (el.value += 1) };
+            resultValue = el.value += 1;
+            bonusValue = handleCheckParam(resultValue);
+            return { ...el, value: resultValue, bonus: bonusValue };
           } else if (el.value < 15 && el.name === item[0]) {
             setSummaryParam(summaryParam + 1);
-            return { ...el, value: (el.value += 1) };
+            resultValue = el.value += 1;
+            bonusValue = handleCheckParam(resultValue);
+            return { ...el, value: resultValue, bonus: bonusValue };
           }
           return el;
         })
@@ -104,13 +120,9 @@ export const Parameters: React.FC<IParametersProps> = (props) => {
     props.setParameters(special);
   };
 
-  useEffect(() => {
-    console.log(summaryParam);
-  }, [summaryParam]);
-
   return (
-    <section className="parameters">
-      <h2 className="parameters__heading">Распределение параметров</h2>
+    <section className="section">
+      <h2 className="section__heading">Распределение параметров</h2>
       <p className="parameters__description">Теперь вы знаете расу.</p>
       <p className="parameters__description">
         Далее вам нужно распределить параметры, чтобы узнать, в чём ваш персонаж
@@ -133,9 +145,7 @@ export const Parameters: React.FC<IParametersProps> = (props) => {
               <div className="parameters__status">
                 <h4 className="parameters__title">{item.nameRU}</h4>
                 <p className="parameters__title">
-                  {handleCheckParam(
-                    special.find((el) => el.name === item.nameEN)?.value
-                  )}
+                  {special.find((el) => el.name === item.nameEN)?.bonus}
                 </p>
               </div>
               <p className="parameters__subtitle">{item.description}</p>

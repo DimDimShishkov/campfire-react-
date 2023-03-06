@@ -3,7 +3,7 @@ import raseArr from "../../mockData/campfire.json";
 import { IClass } from "../../Types/Types";
 
 interface IClassItem {
-  characterClass: IClass;
+  // characterClass: IClass;
   setCharacterClass: (v: string) => void;
   active: boolean;
   onToggle: () => void;
@@ -13,7 +13,7 @@ interface IClassItem {
  * ячейка выбора класса Воин
  */
 export function ClassFighter({
-  characterClass,
+  // characterClass,
   setCharacterClass,
   active,
   onToggle,
@@ -27,11 +27,6 @@ export function ClassFighter({
     setCharacterClass("Fighter");
   };
 
-  /*   console.log(
-    raseArr.abilities.find((item) => item.name === characterClass.value)?.name
-  ); */
-
-  // console.log(characterClass);
   return (
     <div className="class__item">
       <div className="class-item__heading" onClick={onToggle}>
@@ -40,7 +35,7 @@ export function ClassFighter({
             active ? "class-item__span_active" : ""
           } `}
         />
-        <h3 className="class-item__title">{characterClass.name}</h3>
+        <h3 className="class-item__title">Воин</h3>
         <button className="class-item__submit-button" onClick={openItemHandler}>
           Выбрать
         </button>
@@ -55,25 +50,11 @@ export function ClassFighter({
         ref={contentEl}
       >
         <p className="class-item__text">Описание</p>
-        <p className="class-item__text">{characterClass.description}</p>
+        <p className="class-item__text">123</p>
         <p className="class-item__text">Совет</p>
-        <p className="class-item__text">{characterClass.advice}</p>
+        <p className="class-item__text">123</p>
         <p className="class-item__text">Способности</p>
-        <div className="race-item__abilities">
-          {raseArr.abilities
-            .find((item) => item.name === characterClass.value)
-            ?.values.map((item) => (
-              <div className="race-item__items" key={item.name}>
-                <div>
-                  <p className="race-item__item">{item.name}</p>
-                  <p className="race-item__item">
-                    Доступно с {item.level} уровня
-                  </p>
-                </div>
-                <p className="race-item__item">{item.description}</p>
-              </div>
-            ))}
-        </div>
+        <div className="race-item__abilities"></div>
       </div>
     </div>
   );
