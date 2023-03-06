@@ -15,107 +15,43 @@ export const ResultList = () => {
     <section className="result-list">
       <div className="result-list__container">
         <div className="result-list__header">
-          <p className="result-list__name">
+          <div className="result-list__name">
             <input
               name="name"
               type="text"
               className="result-list__name-input"
               placeholder="Введите имя персонажа"
             />
-            <span className="result-list__label result-list__label_absolute">
-              имя персонажа
-            </span>
-          </p>
+            <span className="result-list__line"></span>
+            <span className="result-list__label">имя персонажа</span>
+          </div>
 
           <div className="result-list__info">
-            <div className="result-list__info-section">
-              <p className="result-list__info-box">
-                <p className="vitality-block__box-value">Варвар</p>
-                <span className="result-list__label result-list__label_absolute">
-                  класс
-                </span>
-              </p>
-              <p className="result-list__info-box">
-                <input
-                  name="background"
-                  type="text"
-                  className="result-list__input"
-                  value=""
-                />
-                <span className="result-list__label result-list__label_absolute">
-                  предыстория
-                </span>
-              </p>
-              <p className="result-list__info-box">
-                <input
-                  name="playerName"
-                  type="text"
-                  className="result-list__input"
-                  value=""
-                />
-                <span className="result-list__label result-list__label_absolute">
-                  имя игрока
-                </span>
-              </p>
-            </div>
-            <div className="result-list__info-section">
-              <p className="result-list__info-box">
-                <input
-                  name="race"
-                  type="text"
-                  className="result-list__input"
-                  value="Утишир"
-                />
-                <span className="result-list__label result-list__label_absolute">
-                  раса
-                </span>
-              </p>
-              <p className="result-list__info-box">
-                <input
-                  name="alignment"
-                  type="text"
-                  className="result-list__input"
-                  value=""
-                />
-                <span className="result-list__label result-list__label_absolute">
-                  мировоззрение
-                </span>
-              </p>
-              <p className="result-list__info-box result-list__info-box_medium">
-                <input
-                  name="experience"
-                  type="number"
-                  className="result-list__input"
-                  value=""
-                />
-                <span className="result-list__label result-list__label_absolute">
-                  опыт
-                </span>
-              </p>
-              <p className="result-list__info-box result-list__info-box_small">
-                <input
-                  name="level"
-                  type="text"
-                  className="result-list__input"
-                  min="1"
-                  max="20"
-                  value="1"
-                />
-                <span className="result-list__label result-list__label_absolute">
-                  уровень
-                </span>
-              </p>
-            </div>
+            <p className="result-list__info-text">Варвар</p>
+            <p className="result-list__info-text"> </p>
+            <p className="result-list__info-text"> </p>
+            <span className="result-list__label">класс</span>
+            <span className="result-list__label">предыстория</span>
+            <span className="result-list__label">имя игрока</span>
+            <p className="result-list__info-text">Утишир</p>
+            <p className="result-list__info-text"> </p>
+            <p className="result-list__info-text">1</p>
+            <span className="result-list__label">раса</span>
+            <span className="result-list__label">мировоззрение</span>
+            <span className="result-list__label">уровень</span>
+            <span className="result-list__info-line result-list__info-line_upper"></span>
+            <span className="result-list__info-line result-list__info-line_lower"></span>
           </div>
         </div>
-        {/* <div className="result-list__body">
+
+        <div className="result-list__body">
           <div className="result-list__body-column">
             <div className="result-list__stats-skills">
-              <div className="result-list__stats result-list__stats_default">
+              <div className="result-list__stats">
                 <div className="stat-block">
                   <p className="stat-block__label">Сила</p>
                   <p className="stat-block__modifier">+2</p>
-                  <p className="stat-block__score">15</p>
+                  <span className="stat-block__score">15</span>
                 </div>
                 <div className="stat-block">
                   <p className="stat-block__label">Ловкость</p>
@@ -143,545 +79,209 @@ export const ResultList = () => {
                   <p className="stat-block__score">15</p>
                 </div>
               </div>
+
               <div className="result-list__skills">
                 <div className="modifier-block">
-                  <div className="modifier-block__wrap">
-                    <p className="modifier-block__modifier"></p>
-                  </div>
-                  <p className="modifier-block__label">вдохновение</p>
+                  <span className="modifier-block__modifier"></span>
+                  <span className="modifier-block__label">вдохновение</span>
                 </div>
+
                 <div className="modifier-block">
-                  <div className="modifier-block__wrap">
-                    <p className="modifier-block__modifier round ">+2</p>
+                  <span className="modifier-block__modifier">+2</span>
+                  <span className="modifier-block__label">Бонус владения</span>
+                </div>
+
+                <div className="saves-block">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">Сила </p>
                   </div>
-                  <p className="modifier-block__label">Бонус владения</p>
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">Ловкость </p>
+                  </div>
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">Телосложение </p>
+                  </div>
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">Интеллект </p>
+                  </div>
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">Мудрость </p>
+                  </div>
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">Харизма </p>
+                  </div>
+                  <span className="saves-block__label">Спасброски</span>
                 </div>
                 <div className="saves-block">
-                  <div className="char-skill">
-                    <label className="char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-str"
-                        type="checkbox"
-                        name="str"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+4"
-                    />
-                    <p className="char-skill__label">Сила </p>
-                  </div>
-                  <div className="char-skill">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-dex"
-                        type="checkbox"
-                        name="dex"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+2"
-                    />
-                    <p className="char-skill__label">Ловкость </p>
-                  </div>
-                  <div className="char-skill">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-con"
-                        type="checkbox"
-                        name="con"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+4"
-                    />
-                    <p className="char-skill__label">Телосложение </p>
-                  </div>
-                  <div className="char-skill">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-int"
-                        type="checkbox"
-                        name="int"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+0"
-                    />
-                    <p className="char-skill__label">Интеллект </p>
-                  </div>
-                  <div className="char-skill">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-wis"
-                        type="checkbox"
-                        name="wis"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+0"
-                    />
-                    <p className="char-skill__label">Мудрость </p>
-                  </div>
-                  <div className="char-skill">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-cha"
-                        type="checkbox"
-                        name="cha"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="−1"
-                    />
-                    <p className="char-skill__label">Харизма </p>
-                  </div>
-                  <span className="char-sheet__label centered">Спасброски</span>
-                </div>
-                <div className="saves-block">
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-acrobatics"
-                        type="checkbox"
-                        name="acrobatics"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+2"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Акробатика{" "}
-                      <span className="char-skill__label-base">(Лов)</span>
+                      <span className="save-block__label-base">(Лов)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-investigation"
-                        type="checkbox"
-                        name="investigation"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+0"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Анализ{" "}
-                      <span className="char-skill__label-base">(Инт)</span>
+                      <span className="save-block__label-base">(Инт)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-athletics"
-                        type="checkbox"
-                        name="athletics"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+4"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Атлетика{" "}
-                      <span className="char-skill__label-base">(Сил)</span>
+                      <span className="save-block__label-base">(Сил)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-perception"
-                        type="checkbox"
-                        name="perception"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+0"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Восприятие{" "}
-                      <span className="char-skill__label-base">(Муд)</span>
+                      <span className="save-block__label-base">(Муд)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-survival"
-                        type="checkbox"
-                        name="survival"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+2"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Выживание{" "}
-                      <span className="char-skill__label-base">(Муд)</span>
+                      <span className="save-block__label-base">(Муд)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-performance"
-                        type="checkbox"
-                        name="performance"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="−1"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Выступление{" "}
-                      <span className="char-skill__label-base">(Хар)</span>
+                      <span className="save-block__label-base">(Хар)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-intimidation"
-                        type="checkbox"
-                        name="intimidation"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="−1"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Запугивание{" "}
-                      <span className="char-skill__label-base">(Хар)</span>
+                      <span className="save-block__label-base">(Хар)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-history"
-                        type="checkbox"
-                        name="history"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+0"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       История{" "}
-                      <span className="char-skill__label-base">(Инт)</span>
+                      <span className="save-block__label-base">(Инт)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-sleight of hand"
-                        type="checkbox"
-                        name="sleight of hand"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+2"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Ловкость рук{" "}
-                      <span className="char-skill__label-base">(Лов)</span>
+                      <span className="save-block__label-base">(Лов)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-arcana"
-                        type="checkbox"
-                        name="arcana"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+0"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Магия{" "}
-                      <span className="char-skill__label-base">(Инт)</span>
+                      <span className="save-block__label-base">(Инт)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-medicine"
-                        type="checkbox"
-                        name="medicine"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+0"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Медицина{" "}
-                      <span className="char-skill__label-base">(Муд)</span>
+                      <span className="save-block__label-base">(Муд)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-deception"
-                        type="checkbox"
-                        name="deception"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="−1"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Обман{" "}
-                      <span className="char-skill__label-base">(Хар)</span>
+                      <span className="save-block__label-base">(Хар)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-nature"
-                        type="checkbox"
-                        name="nature"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+0"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Природа{" "}
-                      <span className="char-skill__label-base">(Инт)</span>
+                      <span className="save-block__label-base">(Инт)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-insight"
-                        type="checkbox"
-                        name="insight"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+0"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Проницательность{" "}
-                      <span className="char-skill__label-base">(Муд)</span>
+                      <span className="save-block__label-base">(Муд)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-religion"
-                        type="checkbox"
-                        name="religion"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+0"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Религия{" "}
-                      <span className="char-skill__label-base">(Инт)</span>
+                      <span className="save-block__label-base">(Инт)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-stealth"
-                        type="checkbox"
-                        name="stealth"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+2"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Скрытность{" "}
-                      <span className="char-skill__label-base">(Лов)</span>
+                      <span className="save-block__label-base">(Лов)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-persuasion"
-                        type="checkbox"
-                        name="persuasion"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="−1"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Убеждение{" "}
-                      <span className="char-skill__label-base">(Хар)</span>
+                      <span className="save-block__label-base">(Хар)</span>{" "}
                     </p>
                   </div>
-                  <div className="char-skill small">
-                    <label className="checkdot char-skill__check">
-                      <input
-                        className="checkdot__input"
-                        id="checkdot-animal handling"
-                        type="checkbox"
-                        name="animal handling"
-                      />
-                      <span className="checkdot__marker"></span>
-                    </label>
-                    <input
-                      className="char-skill__modifier"
-                      type="text"
-                      max="15"
-                      min="-9"
-                      value="+0"
-                    />
-                    <p className="char-skill__label">
+                  <div className="save-block">
+                    <span className="save-block__marker"></span>
+                    <p className="save-block__modifier">+4</p>
+                    <p className="save-block__label">
                       Уход за животными{" "}
-                      <span className="char-skill__label-base">(Муд)</span>
+                      <span className="save-block__label-base">(Муд)</span>{" "}
                     </p>
                   </div>
-                  <span className="char-sheet__label centered">навыки</span>
+
+                  <span className="saves-block__label">навыки</span>
                 </div>
               </div>
             </div>
+
             <div className="modifier-block">
-              <div className="modifier-block__wrap">
-                <p className="modifier-block__modifier ellipsis ">10</p>
-              </div>
-              <p className="modifier-block__label">
+              <span className="modifier-block__modifier">10</span>
+              <span className="modifier-block__label">
                 пассивная мудрость (Восприятие)
-              </p>
+              </span>
             </div>
+
             <div className="text-block">
               <div className="text-block__textarea-wrap">
                 <div className="text-block__textarea">
@@ -695,7 +295,8 @@ export const ResultList = () => {
               </div>
             </div>
           </div>
-          <div className="char-sheet__body-column">
+
+          <div className="result-list__body-column">
             <div className="vitality-block">
               <div className="vitality-block__box no-back">
                 <svg
@@ -714,28 +315,22 @@ export const ResultList = () => {
                     fill="black"
                   ></path>
                 </svg>
-                <p className="vitality-block__box-value vitality-block__shield-input char-sheet__input">
-                  14
-                </p>
-                <p className="char-sheet__label centered min">КЗ</p>
-              </div>
-              <div className="vitality-block__box vitality-block__box-initiative">
-                <p className="vitality-block__box-value char-sheet__input">
-                  +2
-                </p>
-                <p className="char-sheet__label centered min">Инициатива</p>
+                <p className="vitality-block__shield-text">14</p>
+                <p className="vitality-block__shield-desc">КЗ</p>
               </div>
               <div className="vitality-block__box">
-                <p className="vitality-block__box-value char-sheet__input">
-                  30
-                </p>
-                <p className="char-sheet__label centered min">Скорость</p>
+                <p className="vitality-block__shield-text">+2</p>
+                <p className="vitality-block__shield-desc">Инициатива</p>
+              </div>
+              <div className="vitality-block__box">
+                <p className="vitality-block__shield-text">30</p>
+                <p className="vitality-block__shield-desc">Скорость</p>
               </div>
               <div className="vitality-block__hp">
-                <label className="vitality-block__input-label">
-                  Максимум хитов
-                  <p className="max char-sheet__input">16</p>
-                </label>
+                <p className="vitality-block__input-label">
+                  Максимум хитов{"  "}
+                  <span className="char-sheet__input">16</span>
+                </p>
                 <p className="char-sheet__input">16</p>
                 <p className="char-sheet__label centered">Текущие хиты</p>
               </div>
@@ -795,7 +390,7 @@ export const ResultList = () => {
               </div>
             </div>
           </div>
-          <div className="char-sheet__body-column">
+          <div className="result-list__body-column">
             <div className="personality-block">
               <div className="text-block  ">
                 <div className="text-block__textarea-wrap">
@@ -845,7 +440,7 @@ export const ResultList = () => {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );
