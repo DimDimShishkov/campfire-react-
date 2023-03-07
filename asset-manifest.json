@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/campfire/static/css/main.8eb2b32d.css",
-    "main.js": "/campfire/static/js/main.282c5840.js",
+    "main.css": "/campfire/static/css/main.e8ddcdad.css",
+    "main.js": "/campfire/static/js/main.23c5877a.js",
+    "static/media/habr.png": "/campfire/static/media/habr.1b203ae7ac7eb08f7c73.png",
+    "static/media/tg.png": "/campfire/static/media/tg.b87936e218148ef33eb2.png",
     "static/media/campfire.png": "/campfire/static/media/campfire.d17c778b693e79daf15c.png",
     "index.html": "/campfire/index.html",
-    "main.8eb2b32d.css.map": "/campfire/static/css/main.8eb2b32d.css.map",
-    "main.282c5840.js.map": "/campfire/static/js/main.282c5840.js.map"
+    "main.e8ddcdad.css.map": "/campfire/static/css/main.e8ddcdad.css.map",
+    "main.23c5877a.js.map": "/campfire/static/js/main.23c5877a.js.map"
   },
   "entrypoints": [
-    "static/css/main.8eb2b32d.css",
-    "static/js/main.282c5840.js"
+    "static/css/main.e8ddcdad.css",
+    "static/js/main.23c5877a.js"
   ]
 }
