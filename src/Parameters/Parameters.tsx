@@ -182,7 +182,7 @@ export const Parameters: React.FC<IParametersProps> = (props) => {
         <div className="parameters__items">
           <p>Осталось очков: {75 - summaryParam}</p>
           <button type="submit" className="parameters__submit">
-            Подтвердить
+            Сохранить
           </button>
         </div>
       </form>

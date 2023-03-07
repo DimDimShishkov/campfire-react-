@@ -150,7 +150,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  max-width: 200px;
+  max-width: 350px;
   margin: 0 auto;
 }
 
@@ -160,11 +160,24 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+  width: 100%;
 }
 .abilities__vit {
   /* width: 100%; */
+  /* width: 80px; */
   position: relative;
 }
+
+.abilities-block__shield {
+  height: 100%;
+  left: 0;
+  /* position: absolute; */
+  top: 0;
+  width: 100%;
+  /* width: 48px; */
+  /* height: 60px; */
+}
+
 .abilities__text {
   margin: 0;
   /* color: #20222c; */
@@ -196,8 +209,8 @@
   border: 2px solid #ff6701;
 }
 .abilities__button {
-  margin-top: 50px;
-  color: rgb(0, 255, 255);
+  margin-top: 80px;
+  color: rgb(255, 255, 255);
   transition: all 0.3s ease;
   font-size: 14px;
   font-weight: 700;

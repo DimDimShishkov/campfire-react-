@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./Header.css";
 import campfire from "../images/campfire.png";
 
-export function Header() {
+interface IHeaderProps {
+  isModalOpen: boolean;
+  openModal: () => void;
+}
+
+export const Header: React.FC<IHeaderProps> = ({ openModal, isModalOpen }) => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
 
   const handleScroll = () => {
@@ -27,7 +32,9 @@ export function Header() {
       >
         <img src={campfire} alt="костер" className="header__image" />
       </a>
-      <p className="header__text">Показать персонажа</p>
+      <button className="header__button" onClick={() => openModal()}>
+        {isModalOpen ? "Скрыть лист" : "Показать персонажа"}
+      </button>
     </header>
   );
-}
+};

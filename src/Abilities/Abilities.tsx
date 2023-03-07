@@ -5,6 +5,7 @@ import { AbilitiesWrap } from "./AbilitiesWrap";
 
 interface IProps {
   race: string;
+  character: string;
   parameters: IParameter[];
   setResult(v: IAbility[]): void;
 }
@@ -14,7 +15,7 @@ interface IProps {
  * этап выбора навыков
  */
 
-function Abilities({ race, parameters, setResult }: IProps) {
+function Abilities({ race, parameters, setResult, character }: IProps) {
   const initialSkills: IAbility[] = [
     {
       name: "str",
@@ -244,7 +245,11 @@ function Abilities({ race, parameters, setResult }: IProps) {
   };
 
   let info;
-  if (parameters.length && race !== "Подлежит выбору") {
+  if (
+    parameters.length &&
+    race !== "Подлежит выбору" &&
+    character !== "Подлежит выбору"
+  ) {
     info = (
       <>
         <p className="abilities__description">
@@ -253,9 +258,8 @@ function Abilities({ race, parameters, setResult }: IProps) {
         <p className="abilities__description">
           Остаётся выбрать навыки и спасброски.
         </p>
-        {/* <p className="abilities__description">
-          Выбранный класс: 123. ДОБАВИТЬ СЮДА РАЗДеЛ НАВЫКИ.
-        </p> */}
+        <p className="abilities__description">Выбранная раса: {race}</p>
+        <p className="abilities__description">Выбранный класс: {character}</p>
         <div className="abilities__containers">
           <div className="abilities__container">
             <h2 className="abilities__title">
@@ -537,7 +541,7 @@ function Abilities({ race, parameters, setResult }: IProps) {
             <div className="abilities__stats">
               <div className="abilities__vit">
                 <svg
-                  className="vitality-block__shield"
+                  className="abilities-block__shield"
                   width="48"
                   height="60"
                   viewBox="0 0 48 60"
@@ -586,7 +590,7 @@ function Abilities({ race, parameters, setResult }: IProps) {
               className="abilities__stat abilities__button"
               onClick={() => setResult(skills)}
             >
-              Сохранить выбор
+              Сохранить результат
             </button>
           </div>
         </div>
@@ -595,13 +599,20 @@ function Abilities({ race, parameters, setResult }: IProps) {
         </p>
       </>
     );
-  } else if (!parameters.length && race !== "Подлежит выбору") {
+  } else if (
+    !parameters.length &&
+    race !== "Подлежит выбору" &&
+    character !== "Подлежит выбору"
+  ) {
     info = (
       <p className="abilities__description">
         Раса и класс выбраны. Остаётся распределить параметры.
       </p>
     );
-  } else if (parameters.length && race === "Подлежит выбору") {
+  } else if (
+    parameters.length &&
+    (race === "Подлежит выбору" || character === "Подлежит выбору")
+  ) {
     info = (
       <p className="abilities__description">
         Параметры распределены. Остаётся выбрать расу и класс.

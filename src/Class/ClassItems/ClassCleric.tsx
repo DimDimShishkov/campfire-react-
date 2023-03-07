@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import raseArr from "../../mockData/campfire.json";
-import { IClass } from "../../Types/Types";
+// import raseArr from "../../mockData/campfire.json";
+// import { IClass } from "../../Types/Types";
 
 interface IClassItem {
   // characterClass: IClass;
@@ -24,7 +24,7 @@ export function ClassCleric({
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.stopPropagation();
-    setCharacterClass("Cleric");
+    setCharacterClass("Жрец");
   };
 
   return (
@@ -480,7 +480,7 @@ export function ClassCleric({
               Вы можете использовать Божественный канал, чтобы создать
               иллюзорную копию себя. Вы действием создаёте идеальную иллюзию
               себя, которая существует в течение 1 минуты, или пока Вы не
-              потеряете концентрацию (как при концентрирации на заклинании).
+              потеряете концентрацию (как при концентрации на заклинании).
               Иллюзия появляется в свободном пространстве, видимом Вами в
               пределах 30 футов. Бонусным действием в свой ход Вы можете
               переместить иллюзию на расстояние до 30 футов в видимое Вами

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Character from "../Character/Character";
+// import Character from "../Character/Character";
 import { Class } from "../Class/Class";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
@@ -17,14 +17,19 @@ function App() {
   const [characterClass, setCharacterClass] =
     useState<string>("Подлежит выбору");
   const [abilities, setAbilities] = useState<IAbility[]>([]);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     // console.log(abilities);
   }, [abilities]);
 
+  const handleOpenModal = () => {
+    setModalOpen(!isModalOpen);
+  };
+
   return (
     <div className="App">
-      <Header />
+      <Header openModal={handleOpenModal} isModalOpen={isModalOpen} />
       <div id="stars"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
@@ -84,9 +89,14 @@ function App() {
       <Parameters setParameters={setParameters} />
       <Class setCharacterClass={setCharacterClass} />
       {/* <Character race={race} parameters={parameters} /> */}
-      <Abilities parameters={parameters} race={race} setResult={setAbilities} />
+      <Abilities
+        parameters={parameters}
+        race={race}
+        setResult={setAbilities}
+        character={characterClass}
+      />
       <Staff />
-      <ResultList />
+      {isModalOpen && <ResultList />}
       <Footer />
     </div>
   );

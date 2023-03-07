@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import raseArr from "../../mockData/campfire.json";
-import { IClass } from "../../Types/Types";
+// import raseArr from "../../mockData/campfire.json";
+// import { IClass } from "../../Types/Types";
 
 interface IClassItem {
   // characterClass: IClass;
@@ -24,7 +24,7 @@ export function ClassRogue({
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.stopPropagation();
-    setCharacterClass("Rogue");
+    setCharacterClass("Плут");
   };
 
   return (

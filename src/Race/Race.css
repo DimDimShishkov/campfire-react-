@@ -79,21 +79,26 @@
 
 .race-item__submit-button {
   margin-left: auto;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 10px 20px;
+  box-sizing: border-box;
+  width: 252px;
+  height: 54px;
+  border: 2px solid #ff6701;
+  border-radius: 10px;
+  background: rgb(103, 0, 1);
+  color: rgb(255, 255, 255);
   font-weight: 400;
   font-size: 20px;
   line-height: 27px;
-  background: #bd8cfe;
-  border-radius: 8px;
+  font-weight: 700;
   transition: all 0.3s ease;
-  width: 252px;
-  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .race-item__submit-button:hover {
-  background: #d3beee;
+  background: rgba(103, 0, 1, 0.8);
 }
 
 .race-item__body {

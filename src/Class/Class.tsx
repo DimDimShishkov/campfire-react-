@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Class.css";
-import raseArr from "../mockData/campfire.json";
-import { ClassItem } from "./ClassItem";
+// import raseArr from "../mockData/campfire.json";
+// import { ClassItem } from "./ClassItem";
 import { ClassBarbarian } from "./ClassItems/ClassBarbarian";
 import { ClassRogue } from "./ClassItems/ClassRogue";
 import { ClassCleric } from "./ClassItems/ClassCleric";

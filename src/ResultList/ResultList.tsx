@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./ResultList.css";
 // import raseArr from "../mockData/campfire.json";
 // import { RaceItem } from "./RaceItem";
@@ -283,16 +283,8 @@ export const ResultList = () => {
             </div>
 
             <div className="text-block">
-              <div className="text-block__textarea-wrap">
-                <div className="text-block__textarea">
-                  <div className="ProseMirror"></div>
-                </div>
-              </div>
-              <div className="text-block__label-wrap">
-                <p className="char-sheet__label centered ">
-                  Прочие владения и языки
-                </p>
-              </div>
+              <div className="text-block__textarea"></div>
+              <p className="vitality-block__text">Прочие владения и языки</p>
             </div>
           </div>
 
@@ -326,21 +318,20 @@ export const ResultList = () => {
                 <p className="vitality-block__shield-text">30</p>
                 <p className="vitality-block__shield-desc">Скорость</p>
               </div>
+
               <div className="vitality-block__hp">
-                <p className="vitality-block__input-label">
-                  Максимум хитов{"  "}
-                  <span className="char-sheet__input">16</span>
+                <p className="vitality-block__heading">
+                  Максимум хитов ________________
+                  <span className="vitality-block__subheading">16</span>
                 </p>
-                <p className="char-sheet__input">16</p>
-                <p className="char-sheet__label centered">Текущие хиты</p>
+                <p className="vitality-block__text">Текущие хиты</p>
               </div>
-              <div className="vitality-block__hp vitality-block__hp_temp">
-                <p className="vitality-block__hp-input char-sheet__input"></p>
-                <p className="char-sheet__label centered">Временные хиты</p>
+              <div className="vitality-block__temp">
+                <p className="vitality-block__text">Временные хиты</p>
               </div>
-              <div className="vitality-block__medium vitality-block__medium-hit-die">
-                <p className="char-sheet__input">1к12</p>
-                <p className="char-sheet__label centered min">Кость хитов</p>
+              <div className="vitality-block__medium">
+                <p className="vitality-block__value">1к12</p>
+                <p className="vitality-block__text">Кость хитов</p>
               </div>
               <div className="vitality-block__medium">
                 <div className="vitality-block__death">
@@ -359,85 +350,47 @@ export const ResultList = () => {
                     <span className="vitality-block__death-circle"></span>
                   </div>
                 </div>
-                <p className="char-sheet__label centered min">
-                  Спасброски от смерти
-                </p>
+                <p className="vitality-block__text">Спасброски от смерти</p>
               </div>
             </div>
-            <div className="text-block char-sheet__attacks ">
-              <div className="weapons-block">
-                <div className="weapons-block__row head">
-                  <div className="weapons-block__cell">Название</div>
-                  <div className="weapons-block__cell">Бонус атаки</div>
-                  <div className="weapons-block__cell">Урон/вид</div>
-                </div>
+
+            <div className="text-block">
+              <div className="weapons-block__row">
+                <p className="vitality-block__text">Название</p>
+                <p className="vitality-block__text">Бонус атаки</p>
+                <p className="vitality-block__text">Урон/вид</p>
               </div>
-              <div className="text-block__textarea-wrap">
-                <div className="text-block__textarea"></div>
-              </div>
-              <div className="text-block__label-wrap">
-                <p className="char-sheet__label centered ">
-                  Атаки и заклинания
-                </p>
-              </div>
+              <div className="text-block__textarea"></div>
+              <p className="vitality-block__text">Атаки и заклинания</p>
             </div>
-            <div className="char-sheet__equipment-wrapper">
-              <div className="text-block char-sheet__equipment ">
-                <div className="text-block__textarea-wrap"></div>
-                <div className="text-block__label-wrap">
-                  <p className="char-sheet__label centered ">Снаряжение</p>
-                </div>
-              </div>
+            <div className="text-block">
+              <div className="text-block__textarea"></div>
+              <p className="vitality-block__text ">Снаряжение</p>
             </div>
           </div>
+
           <div className="result-list__body-column">
             <div className="personality-block">
-              <div className="text-block  ">
-                <div className="text-block__textarea-wrap">
-                  <div className="text-block__textarea"></div>
-                </div>
-                <div className="text-block__label-wrap">
-                  <p className="char-sheet__label centered min">
-                    Черты характера
-                  </p>
-                </div>
+              <div className="text-block">
+                <div className="text-block__textarea"></div>
+                <p className="vitality-block__text">Черты характера</p>
               </div>
               <div className="text-block  ">
-                <div className="text-block__textarea-wrap">
-                  <div className="text-block__textarea"></div>
-                </div>
-                <div className="text-block__label-wrap">
-                  <p className="char-sheet__label centered min">Идеалы</p>
-                </div>
+                <div className="text-block__textarea"></div>
+                <p className="vitality-block__text">Идеалы</p>
               </div>
               <div className="text-block  ">
-                <div className="text-block__textarea-wrap">
-                  <div className="text-block__textarea"></div>
-                </div>
-                <div className="text-block__label-wrap">
-                  <p className="char-sheet__label centered min">
-                    Привязанности
-                  </p>
-                </div>
+                <div className="text-block__textarea"></div>
+                <p className="vitality-block__text">Привязанности</p>
               </div>
               <div className="text-block  ">
-                <div className="text-block__textarea-wrap">
-                  <div className="text-block__textarea"></div>
-                </div>
-                <div className="text-block__label-wrap">
-                  <p className="char-sheet__label centered min">Слабости</p>
-                </div>
+                <div className="text-block__textarea"></div>
+                <p className="vitality-block__text">Слабости</p>
               </div>
             </div>
             <div className="text-block  ">
-              <div className="text-block__textarea-wrap">
-                <div className="text-block__textarea"></div>
-              </div>
-              <div className="text-block__label-wrap">
-                <p className="char-sheet__label centered ">
-                  Умения и способности
-                </p>
-              </div>
+              <div className="text-block__textarea"></div>
+              <p className="vitality-block__text ">Умения и способности</p>
             </div>
           </div>
         </div>
