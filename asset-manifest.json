@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/campfire/static/css/main.e8ddcdad.css",
-    "main.js": "/campfire/static/js/main.23c5877a.js",
-    "static/media/habr.png": "/campfire/static/media/habr.1b203ae7ac7eb08f7c73.png",
-    "static/media/tg.png": "/campfire/static/media/tg.b87936e218148ef33eb2.png",
-    "static/media/campfire.png": "/campfire/static/media/campfire.d17c778b693e79daf15c.png",
-    "index.html": "/campfire/index.html",
-    "main.e8ddcdad.css.map": "/campfire/static/css/main.e8ddcdad.css.map",
-    "main.23c5877a.js.map": "/campfire/static/js/main.23c5877a.js.map"
+    "main.css": "/campfire-react-/static/css/main.e3c67738.css",
+    "main.js": "/campfire-react-/static/js/main.90b6baa8.js",
+    "static/media/habr.png": "/campfire-react-/static/media/habr.1b203ae7ac7eb08f7c73.png",
+    "static/media/tg.png": "/campfire-react-/static/media/tg.b87936e218148ef33eb2.png",
+    "static/media/campfire.png": "/campfire-react-/static/media/campfire.d17c778b693e79daf15c.png",
+    "index.html": "/campfire-react-/index.html",
+    "main.e3c67738.css.map": "/campfire-react-/static/css/main.e3c67738.css.map",
+    "main.90b6baa8.js.map": "/campfire-react-/static/js/main.90b6baa8.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8ddcdad.css",
-    "static/js/main.23c5877a.js"
+    "static/css/main.e3c67738.css",
+    "static/js/main.90b6baa8.js"
   ]
 }
